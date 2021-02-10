@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,6 +10,8 @@ import { HobbieComponent } from './hobbie/hobbie.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { DiplomeComponent } from './diplome/diplome.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,12 @@ import { DiplomeComponent } from './diplome/diplome.component';
     HobbieComponent,
     HomeComponent,
     AdminComponent,
-    DiplomeComponent
+    DiplomeComponent,
+    FooterComponent
   ],
   imports: [
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule
   ],

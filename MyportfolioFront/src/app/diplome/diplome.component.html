@@ -1,1 +1,10 @@
-<p>diplome works!</p>
+<div class="container">
+<div *ngFor="let diplome of diplomes" class="row">
+  <div class="col">
+   title: {{diplomes.title}}
+  </div>
+  <div class="col">
+    date: {{diplomes.date}}
+  </div>
+</div>
+</div>
