@@ -13,7 +13,6 @@ import { DiplomeService } from '../services/diplome.service';
 })
 export class AdminComponent implements OnInit {
   diplomeInput = this.fb.group({
-    id: [''],
 
     title: ['', [Validators.required, Validators.minLength(3)]],
 
@@ -62,7 +61,7 @@ export class AdminComponent implements OnInit {
 
   creationRemove= false;
 
-  newDiplome: Diploma[];
+  newDiplome: Diploma;
 
   diplome: Diploma[];
 
@@ -119,15 +118,22 @@ export class AdminComponent implements OnInit {
     this.newCreation = this.creationInput.value;
   }
 
-  DiplomePost(diplome) {
-    this.diplomeService.addDiplomas(this.diplome).subscribe((diplome) =>{
-      this.newDiplome.push(diplome);
+  DiplomePost() : void {
+    this.diplomeService.addDiplomas(this.diplomeInput.value).subscribe(() => {
+      this.refreshDiplomes();
     })
   };
+  DiplomeDelete() :void {
+   
+  };
+
   ngOnInit(): void {
+    this.refreshDiplomes();
+  }
+
+  refreshDiplomes () {
     this.diplomeService.getAllDiplomas().subscribe((data ) =>{
       this.diplomes = data;
     });
   }
-
 }

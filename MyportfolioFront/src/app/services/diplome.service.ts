@@ -19,14 +19,13 @@ export class DiplomeService {
     return this.httpClient.get<Diploma>(this.URL + id);
   }
 
-  addDiplomas(diploma: Diploma[]): Observable<Diploma> {
+  addDiplomas(diploma: Diploma): Observable<Diploma> {
     return this.httpClient.post<Diploma>(this.URL, diploma)
     ;
   }
-  deleteDiploma() {
-    let endPoints = "/diplomas/1"
-    this.httpClient.delete(this.URL + endPoints).subscribe(data => {
-      console.log(data);
-    });
+  deleteDiploma (diplome: Diploma | number): Observable<Diploma> {
+    const id = typeof diplome === 'number' ? diplome : diplome.id;
+    const url = `${this.URL}/${id}`;
+    return this.httpClient.delete<Diploma>(url);
   }
 }
