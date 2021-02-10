@@ -1,1 +1,11 @@
-<p>hobbie works!</p>
+<div class="container">
+  <div *ngFor="let hobbie of hobbies" class="row">
+    <div class="col bg-light">
+     title: {{hobbie.title}}
+    </div>
+    <div class="col bg-light">
+      date: {{hobbie.date}}
+    </div>
+  </div>
+  </div>
+

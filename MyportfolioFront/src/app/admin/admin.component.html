@@ -1,96 +1,95 @@
 <div class="container-fluid mt-5 mb-5" style="height: auto;">
-  <div class="row justify-content-xl-center">
-    <div class="col-2">
-      <div class="col-2 mt-5">
-        <button type="button"  class="btn btn-secondary" style="width: 15vw; background-color: rgb(38, 24, 168);" (click)="addDiplome()"> Ajouter Diplome </button>
+  <div class="row justify-content-xl-center justify-content-lg-center justify-content-md-center justify-content-sm-center ">
+    <div class="col-6">
+      <div class="col-4 ">
+        <button type="button"  class="btn btn-secondary " style="width: 35vw; background-color: rgb(38, 24, 168);" (click)="addDiplome()"> Ajouter Diplome </button>
       </div>
     </div>
-      <div class="col-2">
-      <div class="col-3 mt-5">
-        <button type="button" class="btn btn-secondary" style="width: 15vw; background-color:rgb(38, 24, 168);" (click)="removeDiplome()"> supprimer Diplome </button>
+      <div class="col-6">
+      <div class="col-4 ">
+        <button type="button" class="btn btn-secondary " style="width: 35vw; background-color:rgb(38, 24, 168);" (click)="removeDiplome()"> supprimer Diplome </button>
       </div>
     </div>
   </div>
   <div  class="row justify-content-xl-center">
-    <div *ngIf="diplomeAdd" class="col-2">
+    <div *ngIf="diplomeAdd" class="col-12">
       <form [formGroup]="diplomeInput" (ngSubmit)="submitDiplome()">
         <div class="col-2 mt-5">
           <label>
-           <input type="text" class="form-control" formControlTitle="tilte" placeholder="Titre" style="width: 15vw;">
+           <input type="text" class="form-control" formControlTitle="tilte" placeholder="Titre" style="width: 30vw;">
           </label>
         </div>
         <div class="col-2 mt-5">
           <label>
-          <input type="text" class="form-control" formControlDate="date" placeholder="date" style="width: 15vw;">
+          <input type="text" class="form-control" formControlDate="date" placeholder="date" style="width: 30vw;">
         </label>
         </div>
       </form>
     </div>
-    <div *ngIf="diplomeRemove" class="col-2">
+    <div *ngIf="diplomeRemove" class="col-12">
       <div *ngFor="let diplomes of diplome" class="col" >
-        <div class="col">
+        <div class="col-2">
           <p>Test</p>
         title: {{diplomes.title}}
        </div>
-       <div class="col">
+       <div class="col-2">
          date: {{diplomes.date}}
         </div>
-        <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
+        <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
         </div>
       </div>
   </div>
   </div>
   <div class="row justify-content-xl-center">
-    <div class="col-2">
-        <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 15vw; background-color:rgb(38, 24, 168);"(click)="addJob()"> ajouter Job </button></div>
+    <div class="col-6">
+        <div class="col-4 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 35vw; background-color:rgb(38, 24, 168);"(click)="addJob()"> ajouter Travail </button></div>
     </div>
-    <div class="col-2">
-        <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 15vw; background-color:rgb(38, 24, 168);" (click)="removeJob()"> supprimer Job</button></div>
+    <div class="col-6">
+        <div class="col-4 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 35vw; background-color:rgb(38, 24, 168);" (click)="removeJob()"> supprimer Travail</button></div>
     </div>
   </div>
   <div  class="row justify-content-xl-center">
-    <div *ngIf="jobAdd" class="col-2">
+    <div *ngIf="jobAdd" class="col-12">
       <form [formGroup]="jobInput" (ngSubmit)="submitJob()">
         <div class="col-2 mt-5">
           <label>
-           <input type="text" class="form-control" formControlTitle="firstName" placeholder="Titre" style="width: 15vw;">
+           <input type="text" class="form-control" formControlTitle="title" placeholder="Titre" style="width: 30vw;">
           </label>
         </div>
         <div class="col-2 mt-5">
           <label>
-           <input type="text" class="form-control" formControlName="firstName" placeholder="Entreprise" style="width: 15vw;">
+           <input type="text" class="form-control" formControlName="enterprise" placeholder="Entreprise" style="width: 30vw;">
           </label>
         </div>
         <div class="col-2 mt-5">
           <label>
-          <input type="text" class="form-control" formControlDate="firstName" placeholder="date" style="width: 15vw;">
+          <input type="text" class="form-control" formControlDate="date" placeholder="date" style="width: 30vw;">
         </label>
         </div>
       </form>
     </div>
-    <div *ngIf="jobRemove" class="col-2">
+    <div *ngIf="jobRemove" class="col-12">
       <div *ngFor="let jobs of job" class="col" >
-        <div class="col">
-          <p>Test</p>
-        title: {{jobs.title}}
+        <div class="col-2">
+           title: {{jobs.title}}
        </div>
-       <div class="col">
+       <div class="col-2">
         date: {{jobs.enterprise}}
        </div>
-       <div class="col">
+       <div class="col-2">
          date: {{jobs.date}}
         </div>
-        <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
+        <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
         </div>
       </div>
   </div>
   </div>
   <div class="row justify-content-xl-center">
-    <div class="col-2">
-      <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 15vw; background-color:rgb(38, 24, 168);" (click)="addHobbie()"> ajouter Hobbie </button></div>
+    <div class="col-6">
+      <div class="col-4 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 35vw; background-color:rgb(38, 24, 168);" (click)="addHobbie()"> ajouter Hobbie </button></div>
   </div>
-  <div class="col-2">
-      <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 15vw; background-color:rgb(38, 24, 168);" (click)="removeHobbie()"> supprimer Hobbie</button></div>
+  <div class="col-6">
+      <div class="col-4 mt-5"><button type="button" class=" btn btn-secondary" style=" width: 35vw; background-color:rgb(38, 24, 168);" (click)="removeHobbie()"> supprimer Hobbie</button></div>
   </div>
   </div>
   <div  class="row justify-content-xl-center">
@@ -98,36 +97,36 @@
       <form [formGroup]="hobbieInput" (ngSubmit)="submitHobbie()">
         <div class="col-2 mt-5">
           <label>
-           <input type="text" class="form-control" formControlTitle="firstName" placeholder="title" style="width: 15vw;">
+           <input type="text" class="form-control" formControlTitle="title" placeholder="title" style="width: 30vw;">
           </label>
         </div>
         <div class="col-2 mt-5">
           <label>
-           <input type="text" class="form-control" formControlName="firstName" placeholder="picture" style="width: 15vw;">
+           <input type="text" class="form-control" formControlName="picture" placeholder="picture" style="width: 30vw;">
           </label>
         </div>
       </form>
     </div>
-    <div *ngIf="hobbieRemove" class="col-2">
+    <div *ngIf="hobbieRemove" class="col-8">
       <div *ngFor="let hobbies of hobbie" class="col" >
-        <div class="col">
+        <div class="col-2">
           <p>Test</p>
         title: {{hobbies.title}}
        </div>
-        <div class="col">
+        <div class="col-2">
          image: {{hobbies.picture}}
         </div>
-        <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
+        <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
         </div>
       </div>
   </div>
   </div>
   <div class="row justify-content-xl-center">
-      <div class="col-2">
-          <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style="width: 15vw; background-color:rgb(38, 24, 168);" (click)="addCreation()"> ajouter Creation </button></div>
+      <div class="col-6">
+          <div class="col-4 mt-5"><button type="button" class=" btn btn-secondary" style="width: 35vw; background-color:rgb(38, 24, 168);" (click)="addCreation()"> ajouter Creation </button></div>
       </div>
-      <div class="col-2">
-        <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style="width: 15vw; background-color:rgb(38, 24, 168);" (click)="removeCreation()"> supprimer Creation </button></div>
+      <div class="col-6">
+        <div class="col-4 mt-5"><button type="button" class=" btn btn-secondary" style="width: 35vw; background-color:rgb(38, 24, 168);" (click)="removeCreation()"> supprimer Creation </button></div>
       </div>
     </div>
     <div  class="row justify-content-xl-center">
@@ -135,26 +134,26 @@
         <form [formGroup]="creationInput" (ngSubmit)="submitCreation()">
           <div class="col-2 mt-5">
             <label>
-             <input type="text" class="form-control" formControlTitle="title" placeholder="titre" style="width: 15vw;">
+             <input type="text" class="form-control" formControlTitle="title" placeholder="titre" style="width: 30vw;">
             </label>
           </div>
           <div class="col-2 mt-5">
             <label>
-             <input type="text" class="form-control" formControlBody="firstName" placeholder="text" style="width: 15vw;">
+             <input type="text" class="form-control" formControlBody="body" placeholder="text" style="width: 30vw;">
             </label>
           </div>
         </form>
       </div>
-      <div *ngIf="creationRemove" class="col-2">
+      <div *ngIf="creationRemove" class="col-8">
         <div *ngFor="let creations of creation" class="col" >
-          <div class="col">
+          <div class="col-2">
             <p>Test</p>
           title: {{creations.title}}
          </div>
-          <div class="col">
+          <div class="col-2">
            image: {{creations.body}}
           </div>
-          <div class="col-3 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
+          <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
           </div>
         </div>
     </div>

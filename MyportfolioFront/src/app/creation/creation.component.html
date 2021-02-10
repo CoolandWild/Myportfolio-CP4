@@ -1,1 +1,11 @@
-<p>creation works!</p>
+<div class="container">
+  <div *ngFor="let creation of creations" class="row">
+    <div class="col bg-light">
+     title: {{creation.title}}
+    </div>
+    <div class="col bg-light">
+      date: {{creation.date}}
+    </div>
+  </div>
+  </div>
+

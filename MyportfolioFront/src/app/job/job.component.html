@@ -1,1 +1,11 @@
-<p>job works!</p>
+<div class="container">
+  <div *ngFor="let job of jobs" class="row">
+    <div class="col bg-light">
+     title: {{job.title}}
+    </div>
+    <div class="col bg-light">
+      date: {{job.date}}
+    </div>
+  </div>
+  </div>
+
