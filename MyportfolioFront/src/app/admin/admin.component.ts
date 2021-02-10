@@ -1,9 +1,10 @@
 import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Diplome } from '../models/diplome';
+import { Diploma } from '../models/diploma';
 import { Job } from '../models/job';
 import { Hobbie } from '../models/hobbie';
 import { Creation } from '../models/creation';
+import { DiplomeService } from '../services/diplome.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,7 +17,7 @@ export class AdminComponent implements OnInit {
 
     title: ['', [Validators.required, Validators.minLength(3)]],
 
-    date: ['', [Validators.required]],
+    date: ['', [Validators.required, Validators.minLength(3)]],
     });
 
   jobInput = this.fb.group({
@@ -61,9 +62,9 @@ export class AdminComponent implements OnInit {
 
   creationRemove= false;
 
-  newDiplome: Diplome[];
+  newDiplome: Diploma[];
 
-  diplome: Diplome[];
+  diplome: Diploma[];
 
   newJob: Job[];
 
@@ -77,7 +78,9 @@ export class AdminComponent implements OnInit {
 
   creation : Creation[];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private diplomeService: DiplomeService) { }
+
+  diplomes : Diploma[];
 
   addDiplome() {
     this.diplomeAdd = !this.diplomeAdd;
@@ -115,7 +118,16 @@ export class AdminComponent implements OnInit {
   submitCreation() {
     this.newCreation = this.creationInput.value;
   }
+
+  DiplomePost(diplome) {
+    this.diplomeService.addDiplomas(this.diplome).subscribe((diplome) =>{
+      this.newDiplome.push(diplome);
+    })
+  };
   ngOnInit(): void {
+    this.diplomeService.getAllDiplomas().subscribe((data ) =>{
+      this.diplomes = data;
+    });
   }
 
 }

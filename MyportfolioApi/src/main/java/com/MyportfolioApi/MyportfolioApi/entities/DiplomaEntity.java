@@ -9,13 +9,15 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name= "admin")
+@Table(name= "diploma")
 @Data
-public class AdminEntity {
-
+public class DiplomaEntity {
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	private String passWord;
+	private String title;
+	private String date;
+
 }

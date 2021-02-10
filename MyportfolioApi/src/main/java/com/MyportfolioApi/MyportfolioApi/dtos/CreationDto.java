@@ -5,8 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdminDto {
+public class CreationDto {
 	
-	private String passWord;
+	private String title;
+	private String body;
+	private String picture;
 	
+
 }

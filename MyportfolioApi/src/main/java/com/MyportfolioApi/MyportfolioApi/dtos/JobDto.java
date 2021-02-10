@@ -5,8 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdminDto {
-	
-	private String passWord;
+public class JobDto {
+
+	private String title;
+	private String enterprise;
+	private String date;
 	
 }

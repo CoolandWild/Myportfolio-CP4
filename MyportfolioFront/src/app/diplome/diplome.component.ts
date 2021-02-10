@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Diplome } from '../models/diplome';
+import { Diploma } from '../models/diploma';
+import { DiplomeService } from '../services/diplome.service';
 
 @Component({
   selector: 'app-diplome',
@@ -7,10 +8,15 @@ import { Diplome } from '../models/diplome';
   styleUrls: ['./diplome.component.scss']
 })
 export class DiplomeComponent implements OnInit {
-  diplomes: Diplome;
-  constructor() { }
+
+
+  constructor(private diplomeService: DiplomeService) { }
+
+  diplomes: Diploma[] ;
 
   ngOnInit(): void {
+    this.diplomeService.getAllDiplomas().subscribe((data ) =>{
+      this.diplomes = data;
+    });
   }
-
 }

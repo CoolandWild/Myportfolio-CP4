@@ -16,26 +16,29 @@
       <form [formGroup]="diplomeInput" (ngSubmit)="submitDiplome()">
         <div class="col-2 mt-5">
           <label>
-           <input type="text" class="form-control" formControlTitle="tilte" placeholder="Titre" style="width: 30vw;">
+           <input type="text" class="form-control" formControlName="title" placeholder="Titre" style="width: 30vw;">
           </label>
         </div>
         <div class="col-2 mt-5">
           <label>
-          <input type="text" class="form-control" formControlDate="date" placeholder="date" style="width: 30vw;">
+          <input type="text" class="form-control" formControlName="date" placeholder="date" style="width: 30vw;">
         </label>
+        </div>
+        <div class="col-8">
+          <button type="button" class="btn btn-secondary" (click)="DiplomePost()" type="submit" [disabled]="!diplomeInput.valid" style="background-color:rgb(38, 24, 168);"> Ajouter ? </button>
         </div>
       </form>
     </div>
-    <div *ngIf="diplomeRemove" class="col-12">
-      <div *ngFor="let diplomes of diplome" class="col" >
-        <div class="col-2">
-          <p>Test</p>
-        title: {{diplomes.title}}
-       </div>
-       <div class="col-2">
-         date: {{diplomes.date}}
+    <div *ngIf="diplomeRemove" class="justify-content-xl-center">
+      <div *ngFor="let diplome of diplomes" class="col" >
+        <div class="col-8 pt-4 text-white ">
+          Titre: {{diplome.title}}
         </div>
-        <div class="col-2 mt-5"><button type="button" class=" btn btn-secondary" style="width: 5vw; background-color:rgb(38, 24, 168);"> supprimer ? </button>
+        <div class="col-8 text-white">
+          Date: {{diplome.date}}
+        </div>
+        <div class="col-8">
+          <button type="button" class="btn btn-secondary" style="background-color:rgb(38, 24, 168);"> supprimer ? </button>
         </div>
       </div>
   </div>
